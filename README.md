@@ -27,19 +27,21 @@ Warning: [50-99] is not all numbers from 50-99. It work for only one digit range
    5. `\W` -> Not a Word character [^a-zA-Z0-9_]
    6. `\S` -> Not a White space [^\t\r\n]
    
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### Repetition Meta characters
+1. `*` -> Preceding item, zero or more times
+   1. `/apples*/` matches "apple", "apples", and "applesssssss"
+2. `+` -> Preceding item, one or more times
+`/.+/` matches any string of character except a line return. For  examples
+   1. `/apples+/` matches "apples" and "applesssssss", but not "apple"
+   2. `/Good .+\./` matches "Good Morning.", "Good day.", "Good evening." and Good night."
+   3. `/\d+/` matches "90210" or any number of digits
+   4. `/\s[a-z]+ed\s/` matches lowercase words ending in "ed"
+   5. `/\d\d\d\d*/` matches numbers with three digits or  more
+   6. `/\d\d\d*/` matches numbers with three digits or  more
+3. `?` -> Preceding item, zero or one time.
+   1. `/apples?/` matches "apple", "apples", but not "applesssssss"
+   2. `/colou?r/` matches "color" and "colour"
+   
 References:
 1. Regular Expressions course content reffered from Linked Learning
    https://www.linkedin.com/learning/learning-regular-expressions-2
