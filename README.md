@@ -1,5 +1,5 @@
 ### Regular-Expressions: Regular expressions are patterns used to match character combinations in strings.
-In the following tutorial Java regular expression engine has been used. or use https://regexr.com/
+In the following tutorial JS regular expression engine is used. or use https://regexr.com/
 By default regular expresions are case sensitive.
 #### Modes
 1. **Standard :** `/re/` re -> regular expression
@@ -41,7 +41,21 @@ Warning: [50-99] is not all numbers from 50-99. It work for only one digit range
 3. `?` -> Preceding item, zero or one time.
    1. `/apples?/` matches "apple", "apples", but not "applesssssss"
    2. `/colou?r/` matches "color" and "colour"
-   
+4. **Quantified Repetition :** `{` -> Start quantified repetition of preceding item and `}` -> End quantified repetition of preceding item. 
+   1. `{min,max}` -> min, max are positive numbers 
+   2. min must always be included and can be zero. max is optional
+   3. `\d{4,8}` -> matches numbers with four to eight digits.
+   4. `\d{4}` -> matches numbers with exactly four digits(min is max)
+   5. `\d{4,}` ->matches numbers with four or more digits{max is infinite}
+   6. `\d{0,}` is same as `\d*`
+   7. `\d{1,}` is same as `\d+`
+   8. `/\d{3}-\d{3}-\d{4}/` matches most US phone numbers
+5. **Greedy Expressions :** Expression tries to match the longest possible string to give us back as little as possible.
+6. **Lazy Expressions :** use `?` to make preceding quantifier lazy
+   1. `/.?[0-9]+/` -> matches "Page 266"
+   2. `/.?[0-9]+?/` -> matches "Page 2" not "Page 266"
+ 
+
 References:
 1. Regular Expressions course content reffered from Linked Learning
    https://www.linkedin.com/learning/learning-regular-expressions-2
